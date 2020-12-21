@@ -1,5 +1,10 @@
 # PSBX
 # P-VALUE
+# Package KScorrect
+# Package Rstatix
+# Package Infer
+
+
 En science, toutes les preuves expérimentales ne se valent pas. Alors pour mesurer la qualité d'une preuve expérimentale, les statisticiens ont développé le concept de "p-valeur". Déroule !
 
 Aujourd'hui, il est devenu presque impossible de trouver des publications scientifiques qui ne font pas usage du concept.
