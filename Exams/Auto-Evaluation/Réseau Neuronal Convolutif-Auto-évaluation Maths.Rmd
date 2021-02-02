@@ -1,0 +1,113 @@
+---
+title: "Auto-évaluation Maths Big Data (Réseau Neuronal convolutif) "
+author: "Daif Hakim"
+date: "25/01/2021"
+output:
+  pdf_document:
+    toc: no
+  html_document:
+    toc: no
+    df_print: paged
+  word_document:
+    toc: no
+subtitle: Les « 12 travaux d'AstéRix »
+header-includes:
+- \usepackage{titling}
+- \usepackage{fancyhdr}
+- \usepackage{hyperref}
+---
+
+
+
+\setlength{\textheight}{20.5cm} 
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{Réseau neuronal convolutif}
+\chead{\href{https://github.com/hakim-daif/PSBX}{Daif Hakim}, Travaux Maths Big data  }
+\renewcommand{\headrulewidth}{1pt} 
+\rfoot{Page \thepage}
+\cfoot{Travaux Maths Big data - Réseau neuronal convolutif}
+\renewcommand{\footrulewidth}{1pt}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T,
+                      results = "hide") 
+```
+
+# Réseau Neuronal convolutif
+
+## 1. Critères d'évaluation
+Dans ce dossier, nous allons parcourir et faire une évaluation des travaux de mes camarades en mathématiques du Big Data: 
+
+Nos critères seront :
+
+
+**1.  Visuel et l'organisation du dossier:**Es ce que la mise en page est propre, agréable à lire ou non ? Le travail est-il organisé (chapitres, sections, sous-sections, Parties)
+
+**2.	Qualité du latex et des formules mathématiques :** Es ce que les formules sont claires ou pas ? 
+                                            Es ce que le dossier contient le code Latex ou le rapport sous format Rmd ?
+**3.	Compréhension de l'idée générale:** Les Auteurs arrivent-ils à transmettre l'idée générale ? 
+
+**4.	Explication et compréhension des formules mathématique et des concepts fondamentaux:** Es ce que les formules et les     notions sont bien expliquées ?
+
+**5.	Difficulté et originalité du thème :** Le sujet abordé est-il original/difficile ou pas ?
+
+
+## 2. Lien vers le document commenté
+
+Pour ce dossier, j'ai fait une auto-evaluation,j'ai choisi d'evaluer mon travail qui porte sur .
+
+le lien (github)  de ce dossier est :
+
+**https://github.com/hakim-daif/PSBX/blob/main/Math%C3%A9matique%20BIG%20DATA/R%C3%A9seau%20neuronal%20convolutif.pdf**
+
+Le dossier en question est le dossier **Réseau neuronal convolutif.pdf**
+
+
+## 3. Synthèse du document
+
+Dans ce dossier, nous avons présenté un des algorithmes les plus performants du Deep Learning, les Convolutional Neural Network ou CNN : Réseaux de neurones convolutifs en français, ce sont des modèles de programmation puissants permettant notamment la reconnaissance d’images en attribuant automatiquement à chaque image fournie en entrée, une étiquette correspondant à sa classe d’appartenance.
+L’architecture du Convolutional Neural Network dispose en amont d’une partie convolutive et comporte par conséquent deux parties bien distinctes : Une partie convolutive et une autre une partie classification.
+
+Afin illustrer les différents concepts de CNN, on a commencé par une introduction là où on évoque la vue globale des algorithmes utilisé dans le monde des images
+Ensuite on a  consacré 3 sections afin d'expliquer les 3 principaux concepts des CNN : la convolution, le Pooling, les fonctions d'activations, notamment en s'appuyant sur l'aspect mathématique.
+
+dans les deux dernières parties , on a essayé  d’introduire les notions des CNN dans le traitement d'images cela nous permettra de voir à quel point les modèles CNN sont importants dans nos vies quotidiennes notamment dans l'univers de traitement d'images .
+
+
+
+
+
+## 4. Evaluation du travail suivant les 5 critères précités
+
+
+
+**1. Visuel et l'organisation du dossier :**
+c'est un dossier  propre, Visuel Très agréable, organisation très bonnes (sommaires, titres , sections et sous-sections bibliographie) 
+
+
+**2.	Qualité du latex et des formules mathématiques :**
+les formules sont très claires et concises cependant on ne trouve pas dans ce dossier le code latex ce qui ne nous permet pas d'évaluer leur maitrise du code latex.
+
+
+**3.	compréhension de l'idée générale :**
+l'idée générale se transmet facilement cependant, vu la complexité de quelques concepts mathématiques il est un peu difficile de transmettre les détails, il faut utiliser plus de ressources pour une parfaite compréhension.
+
+**4.	Explication et compréhension des formules mathématique et des concepts fondamentaux :**
+Des formules très claire, un peu difficile à comprendre, cependant, on constate le manque des détails, 
+
+à travers les formules et l’enchainement des idées on peut déduire que les notions fondamentales sont bien comprises ce qui est très bien
+
+**5.	Difficulté et originalité du thème : le sujet abordé est original :**
+En termes de difficultés,  les notions introduites (exposées) sont moyennes, le thème est d'actualité et on peut le considérer comme un thème original 
+ 
+
+
+
+## 5. Conclusion
+
+En conclusion c'est un sujet très intéressant, Les réseaux de neurones convolutifs sont à ce jour les modèles les plus performants, pour un data scientiste il est très important de comprendre en détails de tels modèles que ça soit en deep learning ou bien en maching learnig.
+c'est un  sujet un peu compliqué mais nous avons essayé d'expliquer et de détailler le maximum de concepts mathématique.
+Donc on est très content de notre travail !
+
+

@@ -1,0 +1,198 @@
+---
+title: "Evaluation des dossiers sur la Programmation en R "
+author: "Daif Hakim"
+date: "31/01/2021"
+output:
+  pdf_document:
+    toc: no
+  html_document:
+    toc: no
+    df_print: paged
+  word_document:
+    toc: no
+subtitle: Les « 12 travaux d'AstéRix »
+header-includes:
+- \usepackage{titling}
+- \usepackage{fancyhdr}
+- \usepackage{hyperref}
+---
+
+
+
+\setlength{\textheight}{20.5cm} 
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{Package Dabr}
+\chead{\href{https://github.com/CorentinBretonniere/CBRETONNIERE-PSBX/blob/main/dabr.Rmd}{Corentin Bretonniere et Antoine Serreau}, Travaux Programmation en R }
+\renewcommand{\headrulewidth}{1pt} 
+\rfoot{Page \thepage}
+\cfoot{Travaux Programmation en R - Package Dabr }
+\renewcommand{\footrulewidth}{1pt}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T,
+                      results = "hide") 
+```
+
+# Package Dabr
+
+## 1. Critères d'évaluation
+
+Dans ce dossier, nous allons parcourir et faire une évaluation des travaux de mes camarades sur la Programmation en R:
+
+## 1. Critères d'évaluation
+Dans ce dossier, nous allons parcourir et faire une Auto-evaluation de notre travail sur la Programmation en R qui porte que la P-Value.
+
+Nos critères seront :
+
+
+**1.  Visuel et l'organisation du dossier:** Es ce que la mise en page est propre ? Le travail est-il organisé (chapitres, sections, sous-sections, Parties) ?
+
+**2.	Qualité de la rédaction du dossier:** le document est-il agréable à lire? es ce que l'auteur a respecté les consignes de rédaction d'un article scientifique ou d'une thèse... ? 
+
+**3.  Compréhension de l'idée générale:**Les Auteurs arrivent-ils à transmettre l'idée générale ? 
+  
+**4.  lisibilité et fonctionnement du code (explication et commentaires):** Es ce que  le code fonctionne parfaitement sans erreurs ?  Es ce que l'auteur a mis des commentaires pour expliquer chaque ligne de commande ? 
+
+
+**5.	L’utilisation d’exemples et de cas concrets (cas pratique):** l'Auteur a t'il utilisé des exemples et des cas pratique lors de sa rédaction ?
+
+
+## 2. Lien vers le document commenté
+
+Pour ce dossier, nous avons étudier le travail de  Corentin Bretonniere et Antoine Serreau, .
+
+le lien (github) vers leur dossier est :
+
+**https://github.com/CorentinBretonniere/CBRETONNIERE-PSBX/blob/main/dabr.Rmd**
+
+Le dossier en question est le dossier **dabr.Rmd**
+
+
+
+## 3. Synthèse du document
+Ce document présente le package : dabr .
+
+Celui-ci est très utile en Data Management car il fournit des fonctions pour gérer les bases de données tel que:  sélectionner, mettre à jour, insérer et supprimer des enregistrements, répertorier les tables, sauvegarder les tables sous forme de fichiers CSV et importer des fichiers CSV sous forme de tables .
+
+Tout d'abord les auteurs nous explique qu'il est nécessaire d'installer quelques packages en plus pour le bon fonctionnement du dabr comme : 'remotes' ,  'dplyr' , 'RMariaDB'
+
+Ensuite ils nous montrent comment télécharger et installer mariadb	qui	est	un	moteur	de	base	de	données	gratuit et qui servira par	la	suite	à	convertir	le fichier	format CSV	en	Data	base	SQL, ils précisent également qu'il faut télécharger et installer le logiciel sequelpro puis le paramétrer afin d'organiser les  colonnes de la  base de données 
+
+Le travail de Corentin Bretonniere et Antoine Serreau se porte essentiellement sur les principales fonctions de ce package : 
+“dbconnect” 
+,“is.connected”, “close_conn”, “list_tables”,  “delete”, “select_all”, “select”, “update”, “get_attr”, “quote” .
+
+
+## 4. Extrait commenté des parties de code
+
+tout d'abord j'apprécier que les auteurs commencent commence touyt d'abord à nous monterer la fonction ls() qui nous permet de savoir les fonctions  incluses dans "dabr"  
+```{r eval=FALSE, include=TRUE}
+ls("package:dabr")
+```
+
+Data
+Pour expliquer ce package les données utilisées sont issues d’une data base téléchargée sur kaggle avec des diverses données en relation avec les 50 musiques les plus écoutées sur Spotify en 2019 (Artiste, Nom de la musique, BPM,…).
+
+Les auteurs commenencent à expliquer fonction par fonction 
+
+Dans un premier temps ils expliquent les fonctions (les 3 premieres :"dbconnect", "is.connected", "close_conn" ) qui sont en relation avec la connection entre R et la base de donnée préalablement crée à l'aide de mariadb sur Sequelpro
+
+Par exemple à travers le code ci-dessous ils abordent la fonction  "dbconnect" qui permet de créer la connection à la database préalablement crée à l'aide de mariadb sur Sequelpro. 
+
+```{r eval=FALSE, include=TRUE}
+conn <- RMariaDB::dbConnect(RMariaDB::MariaDB(),
+                            user = "root",
+                            password = 'root',
+                            dbname = 'Top50',
+                            host = "127.0.0.1",
+                            port = 3306)
+```
+
+
+Ensuite ils abordent les fonctions qui traitent le data management  : 
+
+ “list_tables”, “delete” , “select_all” , fonction “update”, fonction “get_attr” , fonction “quote” 
+
+
+La fonction "list_tables"
+Cette fonction sert tout simplement à regarder quelles sont les colonnes de notre database
+```{r eval=FALSE, include=TRUE}
+dabr::list_tables(conn)
+```
+
+
+fonction "delete"
+
+Cette fonction sert à supprimer une requete (query).
+
+Le code ci-dessous vas servir à enlever les espaces avant et après les data, s'il y en a.
+
+```{r eval=FALSE, include=TRUE}
+query <- paste(unlist(lapply(c(), trimws)), collapse = " ")
+delete.MariaDBConnection <- function(conn, ..., quiet = FALSE) {query}
+dabr::delete(conn, query, quiet = FALSE)
+```
+Fonction "select_all"
+
+Cette commande permet de sélèctionner toute la table : 
+
+```{r eval=FALSE, include=TRUE}
+dabr::select_all(conn, "top50")
+```
+Fonction "select"
+
+La fonction select permet de sélèctionner une colonne de la table
+
+```{r eval=FALSE, include=TRUE}
+dabr::select(conn, "SELECT BPM FROM top50")
+```
+Fonction "quote"
+Cette fonction permet tout simplement d'ajouter une citation sous forme de string.
+```{r eval=FALSE, include=TRUE}
+quote <- function(conn, ...) {
+  UseMethod("quote", conn)
+}
+dabr::quote("Cette Database regroupe les 50 musiques les plus écoutées sur spotify en 2019")
+```
+
+## 5. Evaluation du travail suivant les 5 critères précités
+
+
+
+**1. Visuel et l'organisation du dossier :**
+
+C'est un dossier propre, Visuel moyen, organisation bonne mais peut être fallait mieux diviser le travail en sections ou en partie pour une parfaite organisation, cependant on constate une mise en forme pas très bien faite, de plus on a remarqué des outputs trop long (surtout pour la visualisation des sortie tableaux)
+
+
+**2. Qualité de la rédaction du dossier :**
+
+De courte  lignes introductives ont été utilisées pour chaque partie, on ne peut pas dire grand-chose sur la rédaction.
+
+**3. compréhension de l'idée générale :**
+
+les auteurs maitrisent très bien le sujet d'une façon générale vu sa simplicité, on peut facilement comprendre l'idées générale de ce package et toutes ses fonctionnalités.
+
+
+**4. lisibilité, explication (commentaires) et fonctionnement du code :**
+le code est lisible parfaitement, 
+L'exécution du RMarkdown se réalise parfaitement aussi, les commandes sont expliquées d'une façon générale,cepandant on constate un petit détail, les auteurs ne rentre pas trop dans les détails ce qui complique la compréhension parfaite des commande R .
+
+**5.L’utilisation d’exemples et de cas concrets (cas pratique) :**
+
+Ils vont utiliser un exemple pour chaque fonction, avec l’interprétation des résultats, cela est bien fait 
+
+
+
+## 6. Conclusion
+
+En conclusion, le package présenté par Corentin Bretonniere et Antoine Serreau, était très simple, c'est vrai que dans l'ensemble presque tout est expliqué, mais on aurait aimé voir une explication plus profonde sur les différents codes utilisés. 
+
+En termes de visuel les auteurs auraient pu consacrer plus de temps à la mise en page.
+
+dans l'ensemble c'est un travail acceptable.
+
+
+
+
+

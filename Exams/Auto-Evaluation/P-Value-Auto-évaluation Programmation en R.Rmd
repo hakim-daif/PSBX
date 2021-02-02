@@ -1,0 +1,118 @@
+---
+title: "Auto-évaluation Programmation en R "
+author: "Daif Hakim"
+date: "25/01/2021"
+output:
+  pdf_document:
+    toc: no
+  html_document:
+    toc: no
+    df_print: paged
+  word_document:
+    toc: no
+subtitle: Les « 12 travaux d'AstéRix »
+header-includes:
+- \usepackage{titling}
+- \usepackage{fancyhdr}
+- \usepackage{hyperref}
+---
+
+
+
+\setlength{\textheight}{20.5cm} 
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{P-Value}
+\chead{\href{https://github.com/hakim-daif/PSBX/blob/main/p-value.pdf}{Daif Hakim}, Travaux Programmation en R }
+\renewcommand{\headrulewidth}{1pt} 
+\rfoot{Page \thepage}
+\cfoot{Travaux Programmation en R - P-Value }
+\renewcommand{\footrulewidth}{1pt}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T,
+                      results = "hide") 
+```
+
+# P-Value
+
+## 1. Critères d'évaluation
+
+Dans ce dossier, nous allons parcourir et faire une Auto-evaluation de notre travail sur la Programmation en R qui porte que la P-Value.
+
+Nos critères seront :
+
+
+**1.  Visuel et l'organisation du dossier:** Es ce que la mise en page est propre ? Le travail est-il organisé (chapitres, sections, sous-sections, Parties) ?
+
+**2.	Qualité de la rédaction du dossier:** le document est-il agréable à lire? es ce que l'auteur a respecté les consignes de rédaction d'un article scientifique ou d'une thèse... ? 
+
+**3.  Compréhension de l'idée générale:**Les Auteurs arrivent-ils à transmettre l'idée générale ? 
+  
+**4.  lisibilité et fonctionnement du code (explication et commentaires):** Es ce que  le code fonctionne parfaitement sans erreurs ?  Es ce que l'auteur a mis des commentaires pour expliquer chaque ligne de commande ? 
+
+
+**5.	L’utilisation d’exemples et de cas concrets (cas pratique):** l'Auteur a t'il utilisé des exemples et des cas pratique lors de sa rédaction ?
+
+
+## 2. Lien vers le document commenté
+
+Pour ce dossier, j'ai fait une auto-evaluation,j'ai choisi d'evaluer le package pvaluefunction.
+
+le lien (github)  de ce dossier est :
+
+**https://github.com/hakim-daif/PSBX/blob/main/p-value.pdf**
+
+Le dossier en question est le dossier **pvaluefunctions.Rmd**
+
+
+## 3. Synthèse du document
+
+La valeur de p est souvent utilisée dans les tests d'hypothèses, tests qui vous permettent de rejeter, ou non, une hypothèse nulle. Elle représente la probabilité de faire une erreur de type 1, ou de rejeter l'hypothèse nulle si elle est vraie.
+
+Plus la valeur de p est petite, plus la probabilité de faire une erreur en rejetant l'hypothèse nulle est faible. Une valeur limite de 0,05 est souvent utilisée. Autrement dit, vous pouvez rejeter l'hypothèse nulle si la valeur de p est inférieure à 0,05.
+
+
+dans ce dossier ,nous avons essayé d'expliquer c'est quoi réelement la p-value, le dossier contient deux articles, 
+un article dont on a exposé le concept de la p-value d'une facon purement théorique avec quelques exemples trés simples de son clcul, nous avont nottament expliqué le concept historique et le fondement de l'idée de la p-value puis nous avons evoqué les notions fondamentales de l'inférence statistiques pour permettre au lecteur de bien comprendre le concept de la p-value 
+
+Dans la deuxieme partie, afin de pratiquer la p-value nous avons etudié le package pvalufunctions.
+Le package pvaluefunctions permet de créer des graphiques des fonctions de la p-value , des distributions de confiance, des densités de confiance ou de la valeur Surprisale (valeur S) (Groenland 2019).
+
+Pour mettre en place les fonctionalité de ce package nous avons choisi le jeu de données IRIS (la table célèbre collectées par Edgar Anderson) cela nous a permet de mettre en application les tests suivants : tets de welch , test de chi-carré;
+
+De plus nous avons effectué une regression linéaire mulitiple et on a fini par interpreter lous les résultats ainsi que le coefficient de corrélation de PEARSON, tout en se basant sur  le principe des hypothèses (nulle et alternative) et la p-value qui permet de trancher entre les deux hypothèses selon un seuil de significativité deja fixé $$alpha = 0,05$
+
+
+## 4. Evaluation du travail suivant les 5 critères précités
+
+
+
+**1. Visuel et l'organisation du dossier :**
+
+c'est un dossier Très propre, Visuel Très agréable, organisation très bonnes (sommaires, titres , sections et sous-sections bibliographie) 
+
+
+**2.	Qualité de la rédaction du dossier :**
+
+La qualité rédactionnelle est à la hauteur du travail, le document est agréable à lire.
+
+**3.	compréhension de l'idée générale :**
+
+vu le travail qu'on a fourni on sent qu'on maitrise bien le sujet, l'organisation permet au lecteur comprendre facilement l'enchainement des idées ainsi que l'idée générale.
+
+
+**4. lisibilité, explication (commentaires) et fonctionnement du code:**
+
+le code est lisible parfaitement, 
+L'exécution du RMarkdown se réalise parfaitement aussi, les commandes sont expliquées d'une façon générale , cependant on constate quelques problèmes dans le visuel des codes car les commentaires sur les différentes commandes étaient trop longs donc ils dépassaient la zone du code .
+
+**5.L’utilisation d’exemples et de cas concrets (cas pratique) :**
+
+Dans la première partie on  a utilisé des exemples très simples à comprendre pour mieux expliciter le concept de la p-value puis dans la deuxième partie nous avons abordé l'étude du package pvaluefunctions d'où on a fait un cas pratique avec différentes applications (tests , régression , coefficient)
+
+
+## 5. Conclusion
+
+Dans l'ensemble c'est un sujet très intéressant, il n'est pas très compliqué , nous avons essayé d'expliquer et de détailler le maximum d'idées, et on a rendu le sujet accessible au grand publique en allant de 0, et on a fini par un cas pratique ou on a illustré l'utilité du package pvaluefunctions 
+Donc on est très content de notre travail !
